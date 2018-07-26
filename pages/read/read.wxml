@@ -1,0 +1,83 @@
+<!--pages/read/read.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{true}}"
+          autoplay="{{true}}"
+          interval="3000"
+          duration="{{500}}"
+          class="swiper">
+    <swiper-item>
+      <image class="swiper-item-img"
+             src="/images/iqiyi.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item-img"
+             src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item-img"
+             src="/images/wx.png"></image>
+    </swiper-item>
+  </swiper>
+  <view class="main">
+    <view class="article">
+      <view class="avatar-date">
+        <image class="avatar"
+               src="/images/avatar/1.png"></image>
+        <text class="date">
+          Sep 20 2016
+        </text>
+      </view>
+      <text class="heading">正是虾肥蟹壮时</text>
+      <image class="cover"
+             src="/images/post/crab.png"></image>
+      <view class="collection-reading">
+        <image class="img"
+               src="/images/icon/chat.png"></image>
+        <text class="text">112</text>
+        <image class="img"
+               src="/images/icon/view.png"></image>
+        <text class="text">90</text>
+      </view>
+    </view>
+    <view class="article">
+      <view class="avatar-date">
+        <image class="avatar"
+               src="/images/avatar/1.png"></image>
+        <text class="date">
+          Sep 20 2016
+        </text>
+      </view>
+      <text class="heading">正是虾肥蟹壮时</text>
+      <image class="cover"
+             src="/images/post/crab.png"></image>
+      <view class="collection-reading">
+        <image class="img"
+               src="/images/icon/chat.png"></image>
+        <text class="text">112</text>
+        <image class="img"
+               src="/images/icon/view.png"></image>
+        <text class="text">90</text>
+      </view>
+    </view>
+    <view class="article">
+      <view class="avatar-date">
+        <image class="avatar"
+               src="/images/avatar/1.png"></image>
+        <text class="date">
+          Sep 20 2016
+        </text>
+      </view>
+      <text class="heading">正是虾肥蟹壮时</text>
+      <image class="cover"
+             src="/images/post/crab.png"></image>
+      <view class="collection-reading">
+        <image class="img"
+               src="/images/icon/chat.png"></image>
+        <text class="text">112</text>
+        <image class="img"
+               src="/images/icon/view.png"></image>
+        <text class="text">90</text>
+      </view>
+    </view>
+  </view>
+</view>
