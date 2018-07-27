@@ -7,77 +7,20 @@
           class="swiper">
     <swiper-item>
       <image class="swiper-item-img"
-             src="/images/iqiyi.png"></image>
+             src="/images/iqiyi.png" bindtap="readDetail" data-post-id="{{5}}"></image>
     </swiper-item>
     <swiper-item>
       <image class="swiper-item-img"
-             src="/images/vr.png"></image>
+             src="/images/vr.png" bindtap="readDetail" data-post-id="{{4}}"></image>
     </swiper-item>
     <swiper-item>
       <image class="swiper-item-img"
-             src="/images/wx.png"></image>
+             src="/images/wx.png" bindtap="readDetail" data-post-id="{{3}}"></image>
     </swiper-item>
   </swiper>
   <view class="main">
-    <view class="article">
-      <view class="avatar-date">
-        <image class="avatar"
-               src="/images/avatar/1.png"></image>
-        <text class="date">
-          Sep 20 2016
-        </text>
-      </view>
-      <text class="heading">正是虾肥蟹壮时</text>
-      <image class="cover"
-             src="/images/post/crab.png"></image>
-      <view class="collection-reading">
-        <image class="img"
-               src="/images/icon/chat.png"></image>
-        <text class="text">112</text>
-        <image class="img"
-               src="/images/icon/view.png"></image>
-        <text class="text">90</text>
-      </view>
-    </view>
-    <view class="article">
-      <view class="avatar-date">
-        <image class="avatar"
-               src="/images/avatar/1.png"></image>
-        <text class="date">
-          Sep 20 2016
-        </text>
-      </view>
-      <text class="heading">正是虾肥蟹壮时</text>
-      <image class="cover"
-             src="/images/post/crab.png"></image>
-      <view class="collection-reading">
-        <image class="img"
-               src="/images/icon/chat.png"></image>
-        <text class="text">112</text>
-        <image class="img"
-               src="/images/icon/view.png"></image>
-        <text class="text">90</text>
-      </view>
-    </view>
-    <view class="article">
-      <view class="avatar-date">
-        <image class="avatar"
-               src="/images/avatar/1.png"></image>
-        <text class="date">
-          Sep 20 2016
-        </text>
-      </view>
-      <text class="heading">正是虾肥蟹壮时</text>
-      <image class="cover"
-             src="/images/post/crab.png"></image>
-      <view class="collection-reading">
-        <image class="img"
-               src="/images/icon/chat.png"></image>
-        <text class="text">112</text>
-        <image class="img"
-               src="/images/icon/view.png"></image>
-        <text class="text">90</text>
-      </view>
-    </view>
+    <block wx:for="{{postList}}" wx:key="{{item.postId}}">
+      <read-item item="{{item}}" bindtap="readDetail" data-post-id="{{item.postId}}"></read-item>
+    </block>
   </view>
 </view>

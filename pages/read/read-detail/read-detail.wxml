@@ -1,0 +1,24 @@
+<!--pages/read/read-detail/read-detail.wxml-->
+<view class="container">
+  <view class="cover-wrap">
+    <image class="cover" src="/images/vr.png"></image>
+    <image class="music-btn" src="/images/music/music-start.png"></image>
+  </view>
+  <view class="avatar-date">
+    <image class="avatar" src="/images/avatar/1.png"></image>
+    <text class="from">知乎</text>
+    <text class="when">发表于</text>
+    <text class="dateTime">三天前</text>
+  </view>
+  <text class="article-heading">当我们在谈论经济学时，我们在谈论什么?</text>
+  <view class="tool">
+    <view class="circle-wrap">
+      <image class="collection" src="/images/icon/collection-anti.png"></image>
+      <image class="share" src="/images/icon/share-anti.png"></image>
+    </view>
+    <view class="horizion"></view>
+  </view>
+  <text class="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, officiis. Necessitatibus excepturi aspernatur commodi voluptatum provident at corporis illo iste minus, nostrum et beatae nisi voluptatem cupiditate, fuga quis laudantium?
+  </text>
+</view>

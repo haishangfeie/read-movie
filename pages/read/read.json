@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText":"文与字",
-  "navigationBarTextStyle":"#fff"
+  "navigationBarTitleText": "文与字",
+  "navigationBarTextStyle": "#fff",
+  "usingComponents": {
+    "read-item": "/components/read-item/index"
+  }
 }

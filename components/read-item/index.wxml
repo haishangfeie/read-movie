@@ -1,0 +1,21 @@
+<!--components/read-item.wxml-->
+<view class="article">
+  <view class="avatar-date">
+    <image class="avatar"
+           src="{{item.avatar}}"></image>
+    <text class="date">
+      {{item.date}}
+    </text>
+  </view>
+  <text class="heading">{{item.title}}</text>
+  <image class="cover"
+         src="{{item.headImgSrc}}"></image>
+  <view class="collection-reading">
+    <image class="img"
+           src="/images/icon/chat.png"></image>
+    <text class="text">{{item.collection}}</text>
+    <image class="img"
+           src="/images/icon/view.png"></image>
+    <text class="text">{{item.reading}}</text>
+  </view>
+</view>
