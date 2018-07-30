@@ -1,11 +1,12 @@
 // 将异步方法封装为promise
 let wxp = {};
 creatWxp('navigateTo');
+creatWxp('setStorage');
+creatWxp('getStorage');
 // creatWxp('login');
 // creatWxp('showActionSheet');
 // creatWxp('navigateTo');
-// creatWxp('setStorage');
-// creatWxp('getStorage');
+
 // creatWxp('removeStorage');
 function creatWxp(key) {
   wxp[key] = (data = {}) => {

@@ -8,7 +8,7 @@ Page({
   readDetail(e) {
     let postId = e.currentTarget.dataset.postId;
     wxp.navigateTo({
-      url:'/pages/read/read-detail/read-detail?post-id=' + postId
+      url:'/pages/read/read-detail/read-detail?id=' + postId
     })
   }
 });

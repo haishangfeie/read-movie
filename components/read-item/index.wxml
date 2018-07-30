@@ -9,7 +9,7 @@
   </view>
   <text class="heading">{{item.title}}</text>
   <image class="cover"
-         src="{{item.headImgSrc}}"></image>
+         src="{{item.imgSrc}}"></image>
   <view class="collection-reading">
     <image class="img"
            src="/images/icon/chat.png"></image>

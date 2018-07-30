@@ -1,0 +1,77 @@
+/* pages/movies/movies.wxss */
+page {
+  background-color: #f2f2f2;
+}
+.search-wrap {
+  display: flex;
+  margin-bottom: 18px;
+  height: 40px;
+
+  align-items: center;
+}
+.search-icon {
+  flex: 0 0 13px;
+  margin: 0 52rpx 0 20rpx;
+  width: 13px;
+  height: 13px;
+}
+.search-inp {
+  flex: 1;
+  padding-left: 10rpx;
+}
+.search-inp-place {
+  font-size: 12px;
+}
+.title-wrap {
+  margin-bottom: 17px;
+  height: 10px;
+  line-height: 10px;
+}
+.title-wrap .title {
+  margin-left: 20rpx;
+  color: #666;
+  font-size: 10px;
+}
+.more {
+  float: right;
+  margin-right: 10px;
+  color: #1f4ba5;
+  font-size: 20rpx;
+}
+/* 电影卡片 */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  font-size: 0;
+}
+.movie-card .movie-cover {
+  margin-bottom: 14px;
+  width: 200rpx;
+  height: 270rpx;
+}
+.movie-card .movie-name {
+  overflow-x: hidden;
+  margin-bottom: 16px;
+  width: 180rpx;
+  height: 12px;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 12px;
+}
+.star-wrap .star {
+  margin-right: 2rpx;
+  width: 8px;
+  height: 8px;
+}
+.star-wrap .star:last-of-type {
+  margin-right: 0;
+}
+.star-wrap .score {
+  margin-left: 25rpx;
+  height: 8px;
+  font-size: 8px;
+  line-height: 8px;
+}

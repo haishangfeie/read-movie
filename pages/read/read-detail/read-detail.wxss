@@ -1,6 +1,7 @@
 /* pages/read/read-detail/read-detail.wxss */
 .cover-wrap {
   position: relative;
+  font-size: 0;
 }
 .cover-wrap .cover {
   width: 100%;
@@ -20,42 +21,63 @@
   display: flex;
   margin-top: 12px;
   margin-bottom: 16px;
-  height: 58rpx;
-  font-weight: 700;
 
   align-items: center;
 }
 .avatar-date .avatar {
-  flex: 0 0 58rpx;
+  flex: 0 0 60rpx;
   margin: 0 25rpx 0 33rpx;
-  width: 58rpx;
-  height: 58rpx;
+  width: 60rpx;
+  height: 60rpx;
+  font-weight: 700;
 }
-.avatar-date .from {
+.avatar-date .author {
   margin-right: 23rpx;
   color: #666;
-  font-size: 26rpx;
+  font-size: 14px;
 }
 .avatar-date .when {
   margin-right: 32rpx;
 }
 .avatar-date .when, .avatar-date .dateTime {
   color: #a3a3a3;
-  font-size: 20rpx;
+  font-size: 12px;
 }
 .article-heading {
-  margin-right: 35rpx;
-  margin-left: 45rpx;
+  margin: 0 35rpx 10px 45rpx;
   color: #4b556c;
   letter-spacing: 3px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 27px;
+}
+.tool {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 0;
 }
 .tool .circle-wrap {
   float: right;
+  margin-right: 10px;
 }
 .tool .circle-wrap .share, .tool .circle-wrap .collection {
-  width: 24px;
-  height: 24px;
+  margin-right: 30rpx;
+  width: 45px;
+  height: 45px;
+}
+.tool .horizion {
+  position: absolute;
+  top: 50%;
+  left: 45rpx;
+  z-index: -1;
+  width: 660rpx;
+  height: 1rpx;
+  background-color: #e5e5e5;
+}
+.content {
+  margin-bottom: 20px;
+  padding: 0 32rpx;
+  color: #666;
+  font-size: 12px;
+  line-height: 22px;
 }

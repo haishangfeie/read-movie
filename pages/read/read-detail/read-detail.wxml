@@ -1,24 +1,55 @@
 <!--pages/read/read-detail/read-detail.wxml-->
 <view class="container">
-  <view class="cover-wrap">
-    <image class="cover" src="/images/vr.png"></image>
-    <image class="music-btn" src="/images/music/music-start.png"></image>
-  </view>
+  <block wx:if="{{!isPlaying}}">
+    <view class="cover-wrap"
+          bindtap="playOrPauseMusic">
+      <image class="cover"
+             src="{{postItem.headImgSrc}}"></image>
+      <image class="music-btn"
+             wx:if="{{!isPlaying}}"
+             src="/images/music/music-start.png"></image>
+      <image class="music-btn"
+             wx:else="{{isPlaying}}"
+             src="/images/music/music-stop.png"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="cover-wrap"
+          bindtap="playOrPauseMusic">
+      <image class="cover"
+             src="{{postItem.music.coverImg}}"></image>
+      <image class="music-btn"
+             src="/images/music/music-stop.png"></image>
+    </view>
+  </block>
   <view class="avatar-date">
-    <image class="avatar" src="/images/avatar/1.png"></image>
-    <text class="from">知乎</text>
+    <image class="avatar"
+           src="{{postItem.avatar}}"></image>
+    <text class="author">{{postItem.author}}</text>
     <text class="when">发表于</text>
-    <text class="dateTime">三天前</text>
+    <text class="dateTime">{{postItem.dateTime}}</text>
   </view>
-  <text class="article-heading">当我们在谈论经济学时，我们在谈论什么?</text>
+  <text class="article-heading">{{postItem.title}}</text>
   <view class="tool">
     <view class="circle-wrap">
-      <image class="collection" src="/images/icon/collection-anti.png"></image>
-      <image class="share" src="/images/icon/share-anti.png"></image>
+      <image class="collection"
+             wx:if="{{!isCollected}}"
+             bindtap="collect"
+             src="/images/icon/collection-anti.png"></image>
+      <image wx:else
+             bindtap="collect"
+             class="collection"
+             src="/images/icon/collection.png"></image>
+      <image wx:if="{{!isShared}}"
+             bindtap="share"
+             class="share"
+             src="/images/icon/share-anti.png"></image>
+      <image wx:else
+             bindtap="share"
+             class="share"
+             src="/images/icon/share.png"></image>
     </view>
     <view class="horizion"></view>
   </view>
-  <text class="content">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, officiis. Necessitatibus excepturi aspernatur commodi voluptatum provident at corporis illo iste minus, nostrum et beatae nisi voluptatem cupiditate, fuga quis laudantium?
-  </text>
+  <text class="content">{{postItem.detail}}</text>
 </view>
