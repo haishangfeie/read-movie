@@ -15,7 +15,7 @@
       <text class="more">更多 ></text>
     </view>
     <view class="movie-card-wrap">
-      <movie-card movie="{{ {name:'你的名字',image:'/images/tmp1.jpg',rating:4.5} }}"></movie-card>
+      <movie-card movie="{{ {name:'你的名字',image:'/images/tmp1.jpg',rating:8,stars:50} }}"></movie-card>
       <!-- <view class="movie-card">
         <image class="movie-cover"
                src="/images/tmp1.jpg"></image>

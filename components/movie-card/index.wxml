@@ -3,5 +3,5 @@
   <image class="movie-cover"
          src="{{movie.image}}"></image>
   <text class="movie-name">{{movie.name}}</text>
-  <stars data-rating="{{movie.rating}}"></stars>
+  <stars rating="{{movie.rating}}"  stars="{{movie.stars}}"></stars>
 </view>
