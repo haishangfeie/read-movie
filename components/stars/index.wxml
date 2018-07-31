@@ -1,0 +1,14 @@
+<!--components/stars/index.wxml-->
+<view class="star-wrap">
+  <image class="star"
+         src="/images/icon/star.png"></image>
+  <image class="star"
+         src="/images/icon/star.png"></image>
+  <image class="star"
+         src="/images/icon/star.png"></image>
+  <image class="star"
+         src="/images/icon/star.png"></image>
+  <image class="star"
+         src="/images/icon/star.png"></image>
+  <text class="score">{{rating}}</text>
+</view>

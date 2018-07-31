@@ -14,23 +14,26 @@
       <text class="title">正在热映</text>
       <text class="more">更多 ></text>
     </view>
-    <view class="movie-card">
-      <image class="movie-cover"
-             src="/images/tmp1.jpg"></image>
-      <text class="movie-name">我不是潘金莲我不是潘金莲</text>
-      <view class="star-wrap">
-        <image class="star"
-               src="/images/icon/star.png"></image>
-        <image class="star"
-               src="/images/icon/star.png"></image>
-        <image class="star"
-               src="/images/icon/star.png"></image>
-        <image class="star"
-               src="/images/icon/star.png"></image>
-        <image class="star"
-               src="/images/icon/star.png"></image>
-        <text class="score">6.9</text>
-      </view>
+    <view class="movie-card-wrap">
+      <movie-card movie="{{ {name:'你的名字',image:'/images/tmp1.jpg',rating:4.5} }}"></movie-card>
+      <!-- <view class="movie-card">
+        <image class="movie-cover"
+               src="/images/tmp1.jpg"></image>
+        <text class="movie-name">我不是潘金莲</text>
+        <view class="star-wrap">
+          <image class="star"
+                 src="/images/icon/star.png"></image>
+          <image class="star"
+                 src="/images/icon/star.png"></image>
+          <image class="star"
+                 src="/images/icon/star.png"></image>
+          <image class="star"
+                 src="/images/icon/star.png"></image>
+          <image class="star"
+                 src="/images/icon/star.png"></image>
+          <text class="score">6.9</text>
+        </view>
+      </view> -->
     </view>
   </view>
 </view>

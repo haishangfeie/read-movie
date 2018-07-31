@@ -1,0 +1,24 @@
+/* components/movie-card/index.wxss */
+/* 电影卡片 */
+.movie-card {
+  display: inline-flex;
+  flex-direction: column;
+  width: 200rpx;
+  font-size: 0;
+}
+.movie-card .movie-cover {
+  margin-bottom: 14px;
+  width: 200rpx;
+  height: 270rpx;
+}
+.movie-card .movie-name {
+  overflow-x: hidden;
+  margin-bottom: 16px;
+  width: 180rpx;
+  height: 12px;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 12px;
+}

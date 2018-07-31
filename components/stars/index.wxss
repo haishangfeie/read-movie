@@ -1,0 +1,15 @@
+/* components/stars/index.wxss */
+.star-wrap .star {
+  margin-right: 2rpx;
+  width: 8px;
+  height: 8px;
+}
+.star-wrap .star:last-of-type {
+  margin-right: 0;
+}
+.star-wrap .score {
+  margin-left: 25rpx;
+  height: 8px;
+  font-size: 8px;
+  line-height: 8px;
+}
