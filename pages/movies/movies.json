@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "光与影",
   "usingComponents": {
-    "movie-card": "/components/movie-card/index"
+    "movie-cards": "/components/movie-cards/index"
   }
 }

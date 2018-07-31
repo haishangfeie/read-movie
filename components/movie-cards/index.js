@@ -1,15 +1,15 @@
-// components/movie-card/index.js
+// components/movie-cards/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    movie: {
+    moviesBlock: {
       type: Object,
       value: {}
     }
   },
-
+  externalClasses: ['my-movies-wrap'],
   /**
    * 组件的初始数据
    */
@@ -18,6 +18,5 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {},
-  externalClasses: ['my-movie-card']
+  methods: {}
 });

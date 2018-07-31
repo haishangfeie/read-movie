@@ -1,66 +1,74 @@
 // pages/movies/movies.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    in_theaters: {
+      title: '正在热映',
+      movies: [
+        {
+          name: '你的名字',
+          image: '/images/tmp1.jpg',
+          rating: 8,
+          stars: 44
+        },
+        {
+          name: '我不是潘金莲',
+          image: '/images/tmp1.jpg',
+          rating: 7,
+          stars: 36
+        },
+        {
+          name: '名侦探柯南：天空的遇难船',
+          image: '/images/tmp1.jpg',
+          rating: 6,
+          stars: 30
+        }
+      ]
+    },
+    coming_soon: {
+      title: '即将上映',
+      movies: [
+        {
+          name: '你的名字',
+          image: '/images/tmp1.jpg',
+          rating: 8,
+          stars: 44
+        },
+        {
+          name: '我不是潘金莲',
+          image: '/images/tmp1.jpg',
+          rating: 7,
+          stars: 36
+        },
+        {
+          name: '名侦探柯南：天空的遇难船',
+          image: '/images/tmp1.jpg',
+          rating: 6,
+          stars: 30
+        }
+      ]
+    },
+    top250: {
+      title: '豆瓣top250',
+      movies: [
+        {
+          name: '你的名字',
+          image: '/images/tmp1.jpg',
+          rating: 8,
+          stars: 44
+        },
+        {
+          name: '我不是潘金莲',
+          image: '/images/tmp1.jpg',
+          rating: 7,
+          stars: 36
+        },
+        {
+          name: '名侦探柯南：天空的遇难船',
+          image: '/images/tmp1.jpg',
+          rating: 6,
+          stars: 30
+        }
+      ]
+    }
   }
-})
+});

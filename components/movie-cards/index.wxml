@@ -1,0 +1,13 @@
+<!--components/movie-cards/index.wxml-->
+<view class="movies-wrap my-movies-wrap">
+  <view class="title-wrap">
+    <text class="title">{{moviesBlock.title}}</text>
+    <text class="more">更多 ></text>
+  </view>
+  <view class="movie-card-wrap">
+    <movie-card wx:for="{{ moviesBlock.movies }}"
+                class="my-movie-card"
+                movie="{{item}}">
+    </movie-card>
+  </view>
+</view>

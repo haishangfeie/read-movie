@@ -23,6 +23,7 @@ App({
     });
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    baseApiUrl: 'http://t.yushu.im'
   }
 });

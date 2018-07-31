@@ -1,5 +1,5 @@
 <!--components/movie-card/index.wxml-->
-<view class="movie-card">
+<view class="movie-card my-movie-card">
   <image class="movie-cover"
          src="{{movie.image}}"></image>
   <text class="movie-name">{{movie.name}}</text>

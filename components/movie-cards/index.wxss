@@ -1,0 +1,29 @@
+/* components/movie-cards/index.wxss */
+.title-wrap {
+  margin-bottom: 17px;
+  height: 10px;
+  line-height: 10px;
+}
+.title-wrap .title {
+  margin-left: 20rpx;
+  color: #666;
+  font-size: 10px;
+}
+.more {
+  float: right;
+  margin-right: 10px;
+  color: #1f4ba5;
+  font-size: 20rpx;
+}
+.movies-wrap {
+  padding-top: 18px;
+  background-color: #fff;
+}
+.movie-card-wrap {
+  display: flex;
+
+  justify-content: space-around;
+}
+.my-movie-card {
+  margin-bottom: 15px;
+}
