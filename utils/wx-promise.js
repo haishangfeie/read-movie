@@ -3,7 +3,7 @@ let wxp = {};
 creatWxp('navigateTo');
 creatWxp('setStorage');
 creatWxp('getStorage');
-// creatWxp('login');
+creatWxp('request');
 // creatWxp('showActionSheet');
 // creatWxp('navigateTo');
 

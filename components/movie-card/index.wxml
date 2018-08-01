@@ -2,6 +2,6 @@
 <view class="movie-card my-movie-card">
   <image class="movie-cover"
          src="{{movie.image}}"></image>
-  <text class="movie-name">{{movie.name}}</text>
-  <stars rating="{{movie.rating}}"  stars="{{movie.stars}}"></stars>
+  <text class="movie-name">{{movie.title}}</text>
+  <stars rating="{{movie.rating.average}}"  stars="{{movie.rating.stars}}"></stars>
 </view>

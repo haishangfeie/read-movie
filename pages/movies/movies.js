@@ -1,74 +1,35 @@
 // pages/movies/movies.js
+import wxp from '../../utils/wx-promise';
+import Movie from './Movie';
+const app = getApp();
+const baseUrl = app.globalData.baseApiUrl;
+console.log(baseUrl);
 Page({
   data: {
-    in_theaters: {
-      title: '正在热映',
-      movies: [
-        {
-          name: '你的名字',
-          image: '/images/tmp1.jpg',
-          rating: 8,
-          stars: 44
-        },
-        {
-          name: '我不是潘金莲',
-          image: '/images/tmp1.jpg',
-          rating: 7,
-          stars: 36
-        },
-        {
-          name: '名侦探柯南：天空的遇难船',
-          image: '/images/tmp1.jpg',
-          rating: 6,
-          stars: 30
-        }
-      ]
-    },
-    coming_soon: {
-      title: '即将上映',
-      movies: [
-        {
-          name: '你的名字',
-          image: '/images/tmp1.jpg',
-          rating: 8,
-          stars: 44
-        },
-        {
-          name: '我不是潘金莲',
-          image: '/images/tmp1.jpg',
-          rating: 7,
-          stars: 36
-        },
-        {
-          name: '名侦探柯南：天空的遇难船',
-          image: '/images/tmp1.jpg',
-          rating: 6,
-          stars: 30
-        }
-      ]
-    },
-    top250: {
-      title: '豆瓣top250',
-      movies: [
-        {
-          name: '你的名字',
-          image: '/images/tmp1.jpg',
-          rating: 8,
-          stars: 44
-        },
-        {
-          name: '我不是潘金莲',
-          image: '/images/tmp1.jpg',
-          rating: 7,
-          stars: 36
-        },
-        {
-          name: '名侦探柯南：天空的遇难船',
-          image: '/images/tmp1.jpg',
-          rating: 6,
-          stars: 30
-        }
-      ]
-    }
+    in_theaters: null,
+    coming_soon: null,
+    top250: null,
+    isShowSearchPage:false
+  },
+  onLoad() {
+    this.getMovie('in_theaters', '正在热映');
+    this.getMovie('coming_soon', '即将上映');
+    this.getMovie('top250', '豆瓣top250');
+  },
+  getMovie(key, titleTxt) {
+    let url = baseUrl + '/v2/movie/' + key + '?start=0&count=3';
+    wxp
+      .request({
+        url
+      })
+      .then(res => {
+        console.log(res.data);
+        let movies = { title: titleTxt, subjects: [] };
+        res.data.subjects.forEach((item, index) => {
+          movies.subjects.push(new Movie(item));
+        });
+        console.log(movies);
+        this.setData({ [key]: movies });
+      });
   }
 });

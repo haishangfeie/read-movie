@@ -9,7 +9,37 @@
            placeholder-class="search-inp-place"
            class="search-inp" />
   </view>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ in_theaters }}"></movie-cards>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ coming_soon }}"></movie-cards>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ top250 }}"></movie-cards>
+  <block wx:if="{{!isShowSearchPage}}">
+    <movie-cards wx:if="{{ in_theaters }}"
+                 class="my-movies-wrap"
+                 moviesBlock="{{ in_theaters }}"></movie-cards>
+    <movie-cards wx:if="{{ coming_soon }}"
+                 class="my-movies-wrap"
+                 moviesBlock="{{ coming_soon }}"></movie-cards>
+    <movie-cards wx:if="{{ top250 }}"
+                 class="my-movies-wrap"
+                 moviesBlock="{{ top250 }}"></movie-cards>
+  </block>
+  <blcok wx:else>
+    <view class="search-res-wrap">
+      <scroll-view scroll-y="{{true}}"
+                   enable-back-to-top="{{true}}"
+                   lower-threshold="50">
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+        <movie-card class="my-movie-card"
+                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+      </scroll-view>
+    </view>
+  </blcok>
 </view>

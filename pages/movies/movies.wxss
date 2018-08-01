@@ -24,3 +24,22 @@ page {
 .my-movies-wrap:last-of-type {
   margin-bottom: 0;
 }
+.search-res-wrap {
+  position: fixed;
+  top: 40px;
+  bottom: 0;
+  display: flex;
+  padding-top: 15px;
+  width: 100%;
+  background-color: #fff;
+
+  flex-wrap: wrap;
+}
+.scroll-view {
+  height: 100%;
+}
+.search-res-wrap .my-movie-card {
+  overflow: hidden;
+  margin-bottom: 25px;
+  margin-left: 38rpx;
+}
