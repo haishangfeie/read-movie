@@ -9,7 +9,13 @@
            placeholder-class="search-inp-place"
            class="search-inp" />
   </view>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ in_theaters }}"></movie-cards>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ coming_soon }}"></movie-cards>
-  <movie-cards class="my-movies-wrap" moviesBlock="{{ top250 }}"></movie-cards>
+  <movie-cards wx:if="{{in_theaters.title}}"
+               class="my-movies-wrap"
+               moviesBlock="{{ in_theaters }}"></movie-cards>
+  <movie-cards wx:if="{{coming_soon.title}}"
+               class="my-movies-wrap"
+               moviesBlock="{{ coming_soon }}"></movie-cards>
+  <movie-cards wx:if="{{top250.title}}"
+               class="my-movies-wrap"
+               moviesBlock="{{ top250 }}"></movie-cards>
 </view>

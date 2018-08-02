@@ -6,6 +6,7 @@
   </view>
   <view class="movie-card-wrap">
     <movie-card wx:for="{{ moviesBlock.movies }}"
+                wx:key="{{index}}"
                 class="my-movie-card"
                 movie="{{item}}">
     </movie-card>
