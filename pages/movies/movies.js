@@ -30,7 +30,7 @@ Page({
     in_theaters: null,
     coming_soon: null,
     top250: null,
-    isShowSearchPage:false
+    isShowSearchPage:true
   },
   onLoad() {
     this.getMovie('in_theaters', '正在热映');

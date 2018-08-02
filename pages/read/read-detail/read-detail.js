@@ -11,6 +11,24 @@ Page({
   onLoad(opts) {
     this.setData({ postItem: postList[opts.id], postId: opts.id });
     this.setMusic();
+    wxp
+      .getStorage({
+        key: 'collectedObj'
+      })
+      .then(res => {
+        this.setData({
+          isCollected: !!(res.data[this.data.postId])
+        });
+      })
+      .catch(err => {
+        this.setData({
+          isCollected: false
+        });
+        wxp.setStorage({
+          key: 'collectedObj',
+          data: {}
+        });
+      });
   },
   onHide: function() {
     this.endMusic();
@@ -53,28 +71,77 @@ Page({
   },
   collect() {
     const postId = this.data.postId;
-    let collected = {};
+    let isCollected = this.data.isCollected;
+    this.setData({
+      isCollected: !isCollected
+    });
     wxp
       .getStorage({
-        key: 'isCollected'
+        key: 'collectedObj'
       })
       .then(res => {
-        collected = res.data;
+        let obj = res.data;
+        obj[postId] = !isCollected;
+        return wxp.setStorage({
+          key: 'collectedObj',
+          data: obj
+        });
       })
       .catch(err => {
-        collected = {};
-      });
-    collected[postId] = !this.data.isCollected;
-    wxp
-      .setStorage({
-        key: 'isCollected',
-        data: collected
-      })
-      .then(res => {
+        console.log('缓存失败');
         this.setData({
-          isCollected: collected[postId]
+          isCollected: isCollected
         });
       });
+    // wxp
+    //   .getStorage({
+    //     key: 'isCollected'
+    //   })
+    //   .then(res => {
+    //     let collected = res.data;
+    //     collected[postId] = !collected[postId];
+    //     this.setData({
+    //       isCollected: collected[postId]
+    //     });
+    //     return Promise.resolve(collected);
+    //   })
+    //   .then(collected => {
+    //     return wxp.setStorage({
+    //       key: 'isCollected',
+    //       data: collected
+    //     });
+    //   })
+    //   .catch(err => {
+    //     // this.setData({
+    //     //   isCollected: true
+    //     // });
+    //   });
+    // // .finally(() => {
+    // //   debugger
+    // //   collected[postId] = !collected[postId];
+    // //   return wxp.setStorage({
+    // //     key: 'isCollected',
+    // //     data: collected
+    // //   });
+    // // })
+    // // .then(res => {
+    // //   debugger;
+
+    // //   this.setData({
+    // //     isCollected: collected[postId]
+    // //   });
+    // // });
+
+    // // wxp
+    // //   .setStorage({
+    // //     key: 'isCollected',
+    // //     data: collected
+    // //   })
+    // //   .then(res => {
+    // //     this.setData({
+    // //       isCollected: collected[postId]
+    // //     });
+    // //   });
   },
   share() {
     this.setData({
