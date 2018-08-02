@@ -11,24 +11,38 @@ Page({
   onLoad(opts) {
     this.setData({ postItem: postList[opts.id], postId: opts.id });
     this.setMusic();
-    wxp
-      .getStorage({
-        key: 'collectedObj'
-      })
-      .then(res => {
-        this.setData({
-          isCollected: !!(res.data[this.data.postId])
-        });
-      })
-      .catch(err => {
-        this.setData({
-          isCollected: false
-        });
-        wxp.setStorage({
-          key: 'collectedObj',
-          data: {}
-        });
+    // wxp
+    //   .getStorage({
+    //     key: 'collectedObj'
+    //   })
+    //   .then(res => {
+    //     this.setData({
+    //       isCollected: !!(res.data[this.data.postId])
+    //     });
+    //   })
+    //   .catch(err => {
+    //     this.setData({
+    //       isCollected: false
+    //     });
+    //     wxp.setStorage({
+    //       key: 'collectedObj',
+    //       data: {}
+    //     });
+    //   });
+    this.initCollectStatus();
+  },
+  initCollectStatus() {
+    let collectObj = wx.getStorageSync('collectedObj');
+    if (collectObj === '') {
+      wx.setStorageSync('collectedObj', {});
+      this.setData({
+        isCollected: false
       });
+      return;
+    }
+    this.setData({
+      isCollected: !!collectObj[this.data.postId]
+    });
   },
   onHide: function() {
     this.endMusic();
@@ -75,73 +89,31 @@ Page({
     this.setData({
       isCollected: !isCollected
     });
-    wxp
-      .getStorage({
-        key: 'collectedObj'
-      })
-      .then(res => {
-        let obj = res.data;
-        obj[postId] = !isCollected;
-        return wxp.setStorage({
-          key: 'collectedObj',
-          data: obj
-        });
-      })
-      .catch(err => {
-        console.log('缓存失败');
-        this.setData({
-          isCollected: isCollected
-        });
-      });
+    let collectedObj = wx.getStorageSync('collectedObj');
+    if (collectedObj === '') {
+      wx.setStorageSync('collectedObj', { [this.data.postId]: !isCollected });
+      return;
+    }
+    collectedObj[this.data.postId] = !isCollected;
+    wx.setStorageSync('collectedObj', collectedObj);
     // wxp
     //   .getStorage({
-    //     key: 'isCollected'
+    //     key: 'collectedObj'
     //   })
     //   .then(res => {
-    //     let collected = res.data;
-    //     collected[postId] = !collected[postId];
-    //     this.setData({
-    //       isCollected: collected[postId]
-    //     });
-    //     return Promise.resolve(collected);
-    //   })
-    //   .then(collected => {
+    //     let obj = res.data;
+    //     obj[postId] = !isCollected;
     //     return wxp.setStorage({
-    //       key: 'isCollected',
-    //       data: collected
+    //       key: 'collectedObj',
+    //       data: obj
     //     });
     //   })
     //   .catch(err => {
-    //     // this.setData({
-    //     //   isCollected: true
-    //     // });
+    //     console.log('缓存失败');
+    //     this.setData({
+    //       isCollected: isCollected
+    //     });
     //   });
-    // // .finally(() => {
-    // //   debugger
-    // //   collected[postId] = !collected[postId];
-    // //   return wxp.setStorage({
-    // //     key: 'isCollected',
-    // //     data: collected
-    // //   });
-    // // })
-    // // .then(res => {
-    // //   debugger;
-
-    // //   this.setData({
-    // //     isCollected: collected[postId]
-    // //   });
-    // // });
-
-    // // wxp
-    // //   .setStorage({
-    // //     key: 'isCollected',
-    // //     data: collected
-    // //   })
-    // //   .then(res => {
-    // //     this.setData({
-    // //       isCollected: collected[postId]
-    // //     });
-    // //   });
   },
   share() {
     this.setData({
