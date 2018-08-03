@@ -11,6 +11,38 @@ Page({
   onLoad(opts) {
     this.setData({ postItem: postList[opts.id], postId: opts.id });
     this.setMusic();
+    // wxp
+    //   .getStorage({
+    //     key: 'collectedObj'
+    //   })
+    //   .then(res => {
+    //     this.setData({
+    //       isCollected: !!(res.data[this.data.postId])
+    //     });
+    //   })
+    //   .catch(err => {
+    //     this.setData({
+    //       isCollected: false
+    //     });
+    //     wxp.setStorage({
+    //       key: 'collectedObj',
+    //       data: {}
+    //     });
+    //   });
+    this.initCollectStatus();
+  },
+  initCollectStatus() {
+    let collectObj = wx.getStorageSync('collectedObj');
+    if (collectObj === '') {
+      wx.setStorageSync('collectedObj', {});
+      this.setData({
+        isCollected: false
+      });
+      return;
+    }
+    this.setData({
+      isCollected: !!collectObj[this.data.postId]
+    });
   },
   onHide: function() {
     this.endMusic();
@@ -53,28 +85,35 @@ Page({
   },
   collect() {
     const postId = this.data.postId;
-    let collected = {};
-    wxp
-      .getStorage({
-        key: 'isCollected'
-      })
-      .then(res => {
-        collected = res.data;
-      })
-      .catch(err => {
-        collected = {};
-      });
-    collected[postId] = !this.data.isCollected;
-    wxp
-      .setStorage({
-        key: 'isCollected',
-        data: collected
-      })
-      .then(res => {
-        this.setData({
-          isCollected: collected[postId]
-        });
-      });
+    let isCollected = this.data.isCollected;
+    this.setData({
+      isCollected: !isCollected
+    });
+    let collectedObj = wx.getStorageSync('collectedObj');
+    if (collectedObj === '') {
+      wx.setStorageSync('collectedObj', { [this.data.postId]: !isCollected });
+      return;
+    }
+    collectedObj[this.data.postId] = !isCollected;
+    wx.setStorageSync('collectedObj', collectedObj);
+    // wxp
+    //   .getStorage({
+    //     key: 'collectedObj'
+    //   })
+    //   .then(res => {
+    //     let obj = res.data;
+    //     obj[postId] = !isCollected;
+    //     return wxp.setStorage({
+    //       key: 'collectedObj',
+    //       data: obj
+    //     });
+    //   })
+    //   .catch(err => {
+    //     console.log('缓存失败');
+    //     this.setData({
+    //       isCollected: isCollected
+    //     });
+    //   });
   },
   share() {
     this.setData({
