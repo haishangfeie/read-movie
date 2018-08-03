@@ -1,13 +1,15 @@
 // pages/movies/movies.js
 import wxp from '../../utils/wx-promise';
-import Movie from './Movie'
+import Movie from './Movie';
 const app = getApp();
 const baseUrl = app.globalData.baseApiUrl;
 Page({
   onLoad() {
-    this.getMovies('coming_soon');
+    this.getMovies('in_theaters', '正在热映');
+    this.getMovies('coming_soon', '即将上映');
+    this.getMovies('top250', '豆瓣top250');
   },
-  getMovies(key) {
+  getMovies(key, title) {
     let url = baseUrl + '/v2/movie/' + key;
     // 添加参数
     url += '?start=0&count=3';
@@ -16,11 +18,15 @@ Page({
         url
       })
       .then(res => {
-        console.log(res);
-        res.data.forEach(item => {
-          console.log(new Movie(item))
+        let obj = { title };
+        obj.subjects = [];
+        res.data.subjects.forEach(item => {
+          obj.subjects.push(new Movie(item));
         });
-        // console.log(class Movie())
+        debugger;
+        this.setData({
+          [key]: obj
+        });
       })
       .catch(err => {
         console.log(err);
