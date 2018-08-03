@@ -1,12 +1,15 @@
 <!--pages/movies/movies.wxml-->
 <view class="container">
-  <view class="search-wrap">
+  <view class="search-wrap"
+        bindtap="focusInput">
     <icon size="13"
           type="search"
           color="#204ca5"
           class="search-icon"></icon>
     <input placeholder="釜山行、夏有乔木仰望天堂"
            placeholder-class="search-inp-place"
+           bindinput="searchMovie"
+           focus="{{isFocus}}"
            class="search-inp" />
   </view>
   <block wx:if="{{!isShowSearchPage}}">
@@ -22,7 +25,8 @@
   </block>
   <blcok wx:else>
     <view class="search-res-wrap">
-      <scroll-view scroll-y="{{true}}"
+      <scroll-view class="scroll-view"
+                   scroll-y="{{true}}"
                    enable-back-to-top="{{true}}"
                    lower-threshold="50">
         <movie-card class="my-movie-card"

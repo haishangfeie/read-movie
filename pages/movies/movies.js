@@ -36,7 +36,9 @@ Page({
     in_theaters: null,
     coming_soon: null,
     top250: null,
-    isShowSearchPage:true
+    isShowSearchPage: false,
+    isFocus: false,
+    inputTimer: null
   },
   onLoad() {
     this.getMovie('in_theaters', '正在热映');
@@ -58,5 +60,19 @@ Page({
         console.log(movies);
         this.setData({ [key]: movies });
       });
+  },
+  focusInput() {
+    this.setData({
+      isFocus: true
+    });
+  },
+  searchMovie(e) {
+    // 节流
+    clearTimeout(this.data.inputTimer);
+    let inputTimer = setTimeout(() => {
+      console.log(e.detail.value);
+      let searchUrl = baseUrl + '/v2/movie/search?q=' + e.detail.value;
+    }, 400);
+    this.setData({ inputTimer });
   }
 });

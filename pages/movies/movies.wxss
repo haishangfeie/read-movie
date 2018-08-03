@@ -29,17 +29,17 @@ page {
   top: 40px;
   bottom: 0;
   display: flex;
-  padding-top: 15px;
   width: 100%;
   background-color: #fff;
 
   flex-wrap: wrap;
 }
 .scroll-view {
+  padding-top: 15px;
   height: 100%;
 }
 .search-res-wrap .my-movie-card {
-  overflow: hidden;
+  display: inline-block;
   margin-bottom: 25px;
   margin-left: 38rpx;
 }
