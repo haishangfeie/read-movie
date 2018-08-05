@@ -1,7 +1,9 @@
 <!--components/movie-card/index.wxml-->
-<view class="movie-card my-movie-card">
+<view class="movie-card my-movie-card"
+      bindtap="onTapCard"
+      data-movie="{{movie}}">
   <image class="movie-cover"
          src="{{movie.image}}"></image>
   <text class="movie-name">{{movie.title}}</text>
-  <stars rating="{{movie.rating.average}}"  stars="{{movie.rating.stars}}"></stars>
+  <stars rating="{{movie.rating}}"></stars>
 </view>

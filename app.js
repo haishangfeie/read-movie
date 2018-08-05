@@ -24,6 +24,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseApiUrl: 'http://t.yushu.im'
+    baseApiUrl: 'http://t.yushu.im',
+    movieDetail:null
   }
 });

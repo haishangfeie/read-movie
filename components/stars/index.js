@@ -5,12 +5,8 @@ Component({
    */
   properties: {
     rating: {
-      type: Number,
-      value: 0
-    },
-    stars: {
-      type: null,
-      value: 0
+      type: Object,
+      value: { average: 0, stars: 0 }
     }
   },
   attached() {
@@ -28,7 +24,7 @@ Component({
    */
   methods: {
     ratingToArray() {
-      let rating = this.properties.stars;
+      let rating = this.properties.rating.stars * 1;
       let ratingArr = [];
       for (let i = 0; i < 5; i++) {
         if (rating - 10 >= 0) {

@@ -109,8 +109,7 @@ Page({
           this.setData({
             isShowSearchPage: true,
             searchRes: subjects
-          });
-          wx.hideLoading();
+          }, wx.hideLoading);
           // 如果数据的长度等于希望获取的长度，则认为还有数据可以加载
           if (subjects.length === initCount) {
             start += initCount;
@@ -135,11 +134,14 @@ Page({
         url,
         success: res => {
           let { subjects } = new MovieCards('', res.data.subjects);
-          this.setData({
-            isShowSearchPage: true,
-            searchRes: [...this.data.searchRes, ...subjects]
-          });
-          wx.hideLoading();
+          this.setData(
+            {
+              isShowSearchPage: true,
+              searchRes: [...this.data.searchRes, ...subjects]
+            },
+            wx.hideLoading
+          );
+
           // 如果数据的长度等于希望获取的长度，则认为还有数据可以加载
           if (subjects.length === initCount) {
             start += initCount;
@@ -149,11 +151,13 @@ Page({
             });
           }
         },
+        fail: () => {
+          wx.hideLoading();
+        },
         complete: () => {
           console.log('updateMovies完成了');
           isUpdateMovies = false;
           updateMoviesReq = null;
-          wx.hideLoading();
         }
       });
     }

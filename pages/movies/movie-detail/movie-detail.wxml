@@ -1,0 +1,74 @@
+<!--pages/movies/movie-detail/movie-detail.wxml-->
+<view class="container"
+      wx:if="{{movie}}">
+  <!-- 封面区域 -->
+  <view class="header">
+    <text class="title">{{movie.title}}</text>
+    <view class="countries-year">
+      <text class="countries">{{movie.countriesTxt}}</text>
+      <text class="dot">·</text>
+      <text class="year">{{movie.year}}</text>
+    </view>
+    <view class="wish-comments">
+      <text class="highlight">{{movie.wish_count}}</text>
+      <text class="text">人想看</text>
+      <text class="highlight">{{movie.comments_count}}</text>
+      <text class="text">条评论</text>
+    </view>
+    <view class="header-bg-wrap">
+      <image src="{{movie.image}}"
+             class="header-bg"></image>
+    </view>
+    <image src="{{movie.image}}"
+           class="header-cover"></image>
+  </view>
+  <!-- 电影信息区域 -->
+  <view class="movie-info">
+    <text class="movie-name">{{movie.title}}</text>
+    <view class="movie-info-item">
+      <text class="movie-info-key">评分</text>
+      <stars rating="{{movie.rating}}"></stars>
+    </view>
+    <view class="movie-info-item">
+      <text class="movie-info-key">导演</text>
+      <text class="movie-info-val">{{movie.directorsTxt}}</text>
+    </view>
+    <view class="movie-info-item">
+      <text class="movie-info-key">主演</text>
+      <text class="movie-info-val">{{movie.castsTxt}}</text>
+    </view>
+    <view class="movie-info-item">
+      <text class="movie-info-key">类型</text>
+      <text class="movie-info-val">{{movie.genresTxt}}</text>
+    </view>
+  </view>
+  <!-- 简介区域 -->
+  <view class="movie-summary-wrap">
+    <text class="movie-summary-title">剧情简介</text>
+    <text class="movie-summary-content">{{movie.summary}}</text>
+  </view>
+  <!-- 影人区域 -->
+  <view class="directors-casts-wrap">
+    <text class="directors-casts-title">影人</text>
+    <scroll-view class="scroll-view"
+                 scroll-x
+                 style="width: 100%">
+      <view class="directors-casts"
+            wx:for="{{movie.directorsAndcastsArr}}"
+            wx:key="{{index}}">
+        <image class="img"
+               src="{{item.imgUrl}}"></image>
+        <text class="role">{{item.role}}</text>
+        <text class="name">{{item.name}}</text>
+      </view>
+      <view class="directors-casts"
+            wx:for="{{movie.directorsAndcastsArr}}"
+            wx:key="{{index}}">
+        <image class="img"
+               src="{{item.imgUrl}}"></image>
+        <text class="role">{{item.role}}</text>
+        <text class="name">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

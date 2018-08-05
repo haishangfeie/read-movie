@@ -1,0 +1,171 @@
+/* pages/movies/movie-detail/movie-detail.wxss */
+/* 封面区域 */
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  width: 100%;
+  height: 160px;
+}
+.header .title {
+  margin: 30px 0 25px;
+  margin-top: 30px;
+  height: 17px;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 17px;
+}
+.header .countries-year {
+  margin-bottom: 38px;
+  height: 12px;
+  color: #fff;
+  line-height: 12px;
+}
+.header .countries-year .countries, .header .countries-year .dot, .header .countries-year .year {
+  font-size: 12px;
+}
+.header .countries-year .countries, .header .countries-year .dot {
+  margin-right: 16rpx;
+  height: 8px;
+}
+.header .wish-comments {
+  font-weight: 700;
+}
+.header .wish-comments .highlight, .header .wish-comments .text {
+  font-size: 8px;
+  line-height: 8px;
+}
+.header .wish-comments .highlight {
+  margin-right: 20rpx;
+  color: #f21146;
+}
+.header .wish-comments .text {
+  margin-right: 40rpx;
+  color: #666;
+}
+.header .header-bg-wrap {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.header .header-bg-wrap .header-bg {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+.header .header-cover {
+  position: absolute;
+  right: 30rpx;
+  bottom: -78rpx;
+  width: 174rpx;
+  height: 238rpx;
+}
+/* 电影信息区域 */
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.movie-info .movie-name {
+  margin: 23px 0 26px 40rpx;
+  height: 10px;
+  color: #666;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 10px;
+}
+.movie-info-item {
+  display: flex;
+  margin-bottom: 11px;
+  margin-left: 40rpx;
+
+  align-items: center;
+}
+.movie-info-item .movie-info-key {
+  width: 74rpx;
+  height: 10px;
+  color: #999;
+  font-size: 10px;
+  line-height: 10px;
+}
+.movie-info-item .movie-info-val {
+  height: 10px;
+  color: #666;
+  font-size: 10px;
+  line-height: 10px;
+}
+.movie-info-item:last-of-type {
+  margin-bottom: 0;
+}
+/* 简介区域 */
+.movie-summary-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 40rpx 27px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.movie-summary-wrap .movie-summary-title {
+  margin-bottom: 13px;
+  color: #999;
+  font-size: 10px;
+}
+.movie-summary-wrap .movie-summary-content {
+  color: #666;
+  font-size: 10px;
+  line-height: 20px;
+}
+/* 影人区域 */
+.directors-casts-wrap {
+  padding: 28px 80rpx;
+}
+.directors-casts-title {
+  display: block;
+  margin-bottom: 23px;
+  color: #999;
+  font-size: 10px;
+}
+.scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+.directors-casts {
+  display: inline-block;
+  margin-right: 40rpx;
+  padding-bottom: 10px;
+  width: 170rpx;
+  height: 100%;
+  vertical-align: top;
+  text-align: center;
+}
+.directors-casts .img {
+  margin-bottom: 8px;
+  width: 100%;
+  height: 210rpx;
+}
+.directors-casts .name, .directors-casts .role {
+  display: block;
+  width: 180rpx;
+  white-space: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+.directors-casts .role {
+  margin-bottom: 5px;
+  color: #999;
+  letter-spacing: 2px;
+}
+.directors-casts .name {
+  box-sizing: border-box;
+  padding: 0 5px;
+  color: #666;
+  letter-spacing: 1px;
+}

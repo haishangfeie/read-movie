@@ -12,5 +12,5 @@
            class="star"
            src="/images/icon/none-star.png"></image>
   </block>
-  <text class="score">{{rating}}</text>
+  <text class="score">{{rating.average}}</text>
 </view>
