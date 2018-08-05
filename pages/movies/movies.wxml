@@ -6,11 +6,18 @@
           type="search"
           color="#204ca5"
           class="search-icon"></icon>
-    <input placeholder="釜山行、夏有乔木仰望天堂"
+    <input value="{{input}}"
+           placeholder="釜山行、夏有乔木仰望天堂"
            placeholder-class="search-inp-place"
            bindinput="searchMovie"
            focus="{{isFocus}}"
            class="search-inp" />
+    <view class="close-del-wrap"
+          catchtap="delInput"
+          wx:if="{{isShowSearchPage}}">
+      <image src="/images/icon/xx.png"
+             class="delInput"></image>
+    </view>
   </view>
   <block wx:if="{{!isShowSearchPage}}">
     <movie-cards wx:if="{{ in_theaters }}"
@@ -28,21 +35,18 @@
       <scroll-view class="scroll-view"
                    scroll-y="{{true}}"
                    enable-back-to-top="{{true}}"
-                   lower-threshold="50">
+                   lower-threshold="{{200}}"
+                   bindscrolltolower="updateMovies">
         <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
-        <movie-card class="my-movie-card"
-                    movie="{{coming_soon.subjects[0]}}"></movie-card>
+                    wx:if="{{ searchRes }}"
+                    wx:for="{{searchRes}}"
+                    wx:key="{{index}}"
+                    movie="{{item}}"></movie-card>
+        <view class="line-wrap"
+              wx-if="{{isSearchMoviesEnd}}">
+          <text class="line-text">亲，我是有底线的</text>
+          <view class="line"></view>
+        </view>
       </scroll-view>
     </view>
   </blcok>

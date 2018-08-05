@@ -7,18 +7,18 @@
   font-size: 0;
 }
 .movie-card .movie-cover {
-  margin-bottom: 14px;
+  margin-bottom: 13px;
   width: 200rpx;
   height: 270rpx;
 }
 .movie-card .movie-name {
-  overflow-x: hidden;
-  margin-bottom: 16px;
+  overflow: hidden;
+  margin-bottom: 15px;
   width: 180rpx;
-  height: 12px;
+  height: 14px;
   color: #666;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 14px;
 }
