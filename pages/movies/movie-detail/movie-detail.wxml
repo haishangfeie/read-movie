@@ -62,14 +62,6 @@
         <text class="role">{{item.role}}</text>
         <text class="name">{{item.name}}</text>
       </view>
-      <view class="directors-casts"
-            wx:for="{{movie.directorsAndcastsArr}}"
-            wx:key="{{index}}">
-        <image class="img"
-               src="{{item.imgUrl}}"></image>
-        <text class="role">{{item.role}}</text>
-        <text class="name">{{item.name}}</text>
-      </view>
     </scroll-view>
   </view>
 </view>
