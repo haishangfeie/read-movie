@@ -1,2 +1,9 @@
 <!--pages/movies/movies-list/movies-list.wxml-->
-
+<scroll-view class="scroll-view"
+             scroll-y="{{true}}"
+             enable-back-to-top="{{true}}"
+             lower-threshold="{{200}}"
+             bindscrolltolower="updateMovies">
+  <movie-card-grid movies="{{movies}}"
+                   isEnd="{{isEnd}}"></movie-card-grid>
+</scroll-view>

@@ -4,7 +4,7 @@
   <block wx:else>
     <image class="avatar" src="{{userInfo.avatarUrl}}" />
     <text class="hello">Hello,{{userInfo.nickName}}</text>
-    <view class="btn">
+    <view class="btn" catchtap="tapBtn">
       <text class="text">开启小程序之旅</text>
     </view>
   </block>

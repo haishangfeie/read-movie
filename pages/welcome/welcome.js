@@ -47,5 +47,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     });
+  },
+  tapBtn() {
+    wx.switchTab({
+      url: '/pages/read/read'
+    });
   }
 });

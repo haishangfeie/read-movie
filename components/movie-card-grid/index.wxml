@@ -1,7 +1,7 @@
 <!--components/movie-card-grid/index.wxml-->
 <movie-card class="my-movie-card"
-            wx:if="{{ searchRes.length > 0 }}"
-            wx:for="{{searchRes}}"
+            wx:if="{{ movies.length > 0 }}"
+            wx:for="{{movies}}"
             wx:key="{{index}}"
             movie="{{item}}"></movie-card>
 <view class="line-wrap"

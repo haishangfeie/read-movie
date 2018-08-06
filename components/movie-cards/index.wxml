@@ -2,7 +2,10 @@
 <view class="movies-wrap my-movies-wrap">
   <view class="title-wrap">
     <text class="title">{{moviesBlock.title}}</text>
-    <text class="more">更多 ></text>
+    <text class="more"
+          data-key="{{key}}"
+          data-title="{{moviesBlock.title}}"
+          catchtap="getMore">更多 ></text>
   </view>
   <view class="movie-card-wrap">
     <movie-card wx:for="{{ moviesBlock.subjects }}"

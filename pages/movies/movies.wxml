@@ -22,13 +22,16 @@
   <block wx:if="{{!isShowSearchPage}}">
     <movie-cards wx:if="{{ in_theaters }}"
                  class="my-movies-wrap"
-                 moviesBlock="{{ in_theaters }}"></movie-cards>
+                 moviesBlock="{{ in_theaters }}"
+                 key="in_theaters"></movie-cards>
     <movie-cards wx:if="{{ coming_soon }}"
                  class="my-movies-wrap"
-                 moviesBlock="{{ coming_soon }}"></movie-cards>
+                 moviesBlock="{{ coming_soon }}"
+                 key="coming_soon"></movie-cards>
     <movie-cards wx:if="{{ top250 }}"
                  class="my-movies-wrap"
-                 moviesBlock="{{ top250 }}"></movie-cards>
+                 moviesBlock="{{ top250 }}"
+                 key="top250"></movie-cards>
   </block>
   <blcok wx:else>
     <view class="search-res-wrap">
@@ -47,7 +50,8 @@
           <text class="line-text">亲，我是有底线的</text>
           <view class="line"></view>
         </view> -->
-        <movie-card-grid searchRes="{{searchRes}}" isEnd="{{isSearchMoviesEnd}}"></movie-card-grid>
+        <movie-card-grid movies="{{searchRes}}"
+                         isEnd="{{isSearchMoviesEnd}}"></movie-card-grid>
       </scroll-view>
     </view>
   </blcok>

@@ -1,4 +1,4 @@
-// components/movie-cards/index.js
+import wxp from '../../utils/wx-promise';
 Component({
   /**
    * 组件的属性列表
@@ -7,6 +7,10 @@ Component({
     moviesBlock: {
       type: Object,
       value: {}
+    },
+    key: {
+      type: String,
+      value: ''
     }
   },
   externalClasses: ['my-movies-wrap'],
@@ -18,5 +22,12 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {}
+  methods: {
+    getMore(e) {
+      let {key,title}=e.currentTarget.dataset;
+      wxp.navigateTo({
+        url: `/pages/movies/movies-list/movies-list?key=${key}&title=${title}`
+      });
+    }
+  }
 });

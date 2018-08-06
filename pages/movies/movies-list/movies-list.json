@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "电影榜单"
+  "usingComponents": {
+    "movie-card-grid": "/components/movie-card-grid/index"
+  }
 }

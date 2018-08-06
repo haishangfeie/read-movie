@@ -20,7 +20,8 @@
              class="header-bg"></image>
     </view>
     <image src="{{movie.image}}"
-           class="header-cover"></image>
+           class="header-cover"
+           catchtap="lookBigImg"></image>
   </view>
   <!-- 电影信息区域 -->
   <view class="movie-info">
@@ -71,4 +72,11 @@
       </view>
     </scroll-view>
   </view>
+</view>
+<view class="big-img-wrap"
+      wx:if="{{isLookBigImg}}"
+      bindtap="closeBigImg">
+  <image mode="aspectFit"
+         class="big-img"
+         src="{{movie.image}}"></image>
 </view>

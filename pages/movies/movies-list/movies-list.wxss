@@ -1,1 +1,8 @@
 /* pages/movies/movies-list/movies-list.wxss */
+page {
+  height: 100%;
+}
+.scroll-view {
+  padding-top: 15px;
+  height: 100%;
+}
